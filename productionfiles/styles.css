@@ -1,0 +1,22 @@
+form {
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* optional, for centering form contents */
+  }
+
+* {
+   background-color: black;
+   color: white;
+}
+
+h1{
+    text-align: center;
+}
+  
