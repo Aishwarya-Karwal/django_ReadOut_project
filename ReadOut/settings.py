@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+import django_heroku
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -119,14 +122,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
  #this folder will tell django where to look for static files 
-'''
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'productionfiles')      #static  
-]  ERRORS: (staticfiles.E002) The STATICFILES_DIRS setting should not contain the STATIC_ROOT setting.
-this error comes with this line
-'''
+    os.path.join(BASE_DIR, 'static')       
+]  #ERRORS: (staticfiles.E002) The STATICFILES_DIRS setting should not contain the STATIC_ROOT setting.
+#   this error comes with this line if i write productionfiles in place of static
+
 # this folder django will create and store all static files for its convenience 
 STATIC_ROOT = BASE_DIR/'productionfiles' #os.path.join(BASE_DIR, 'assets') 
 
@@ -137,3 +140,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'                          #'/media/'
 MEDIA_ROOT = BASE_DIR/ 'media'
+
+django_heroku.settings(locals())

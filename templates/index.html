@@ -15,14 +15,14 @@
 </style>
 <h1 style="text-align:center; background-color:#800000"> Make it read ANYTHING for you ! </h1><br>
 
-<div>
+
 <h3>Upload image file to read content of : </h3>
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{form}}<br>
     <input type="submit" value="Upload" style="color:white; background-color:#800000">
 </form>
-</div>
+
 
 <form style ="text-align:center" method="post" action="result">
     {% csrf_token %}
